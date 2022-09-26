@@ -35,14 +35,8 @@ namespace Actividad4
         {
             if (array.Length != 0)
             {
-                int[] arrayInvertido = new int[array.Length];
-
-                for (int i = arrayInvertido.Length, j = 0; i > 0; i--, j++)
-                {
-                    arrayInvertido[j] = array[i];
-                }
-
-                return arrayInvertido;
+                Array.Reverse(array);
+                return array;
             }
             else {
                 return array;
@@ -54,21 +48,27 @@ namespace Actividad4
         public static int comprobarValorEnArray(int[] array, int valor)
         {
 
-            for (int i = 0; i < array.Length; i++) {
-                if (array[i] == valor) {
-                    return i;
+            if (array.Length != 0)
+            {
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i] == valor)
+                    {
+                        return i;
+                    }
                 }
             }
-
-            return 0;
-
-            //TODO
+            
+            return -1;
+            
             throw new NotImplementedException();
         }
 
         public static int calcularModa(int[] entrada)
         {
-            //TODO
+            
+
+
             throw new NotImplementedException();
         }
     }
