@@ -36,11 +36,9 @@ namespace Actividad4
             if (array.Length != 0)
             {
                 Array.Reverse(array);
-                return array;
             }
-            else {
-                return array;
-            }
+
+            return array;
 
             throw new NotImplementedException();
         }
@@ -66,8 +64,34 @@ namespace Actividad4
 
         public static int calcularModa(int[] entrada)
         {
-            
+            if (entrada.Length != 0)
+            {
+                int maxVal = entrada[0], cont = 0, contMax = 0;
+                for (int i = 0; i < entrada.Length; i++)
+                {
 
+                    for (int j = i + 1; j < entrada.Length - 1; j++)
+                    {
+                        if (entrada[i] == entrada[j])
+                        {
+                            cont++;
+                        }
+                    }
+
+                    if (contMax < cont)
+                    {
+                        maxVal = entrada[i];
+                    }
+
+                    cont = 0;
+
+                }
+
+                return maxVal;
+            }
+            else {
+                return 0;
+            }
 
             throw new NotImplementedException();
         }
